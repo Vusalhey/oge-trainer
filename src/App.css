@@ -26,10 +26,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px;
+  padding: 12px 15px;
   background-color: #f5f5f5;
-  cursor: pointer;
+  border-radius: 4px;
+  margin-bottom: 5px;
 }
+
 
 .variant-content {
   padding: 15px;
@@ -75,6 +77,7 @@ pre {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  font-size: 16px;
 }
 
 .clear-all-btn {
@@ -88,10 +91,7 @@ pre {
   font-size: 16px;
 }
 
-.variant-header {
-  display: flex;
-  align-items: center;
-  padding: 15px;
-  background-color: #f5f5f5;
+.variant-title {
+  flex-grow: 1;
   cursor: pointer;
 }

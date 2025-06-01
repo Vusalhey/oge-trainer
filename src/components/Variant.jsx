@@ -17,48 +17,41 @@ import Task15 from './Task/Task15';
 
 const taskComponents = [
   null,
-  Task1,
-  Task2,
-  Task3,
-  Task4,
-  Task5,
-  Task6,
-  Task7,
-  Task8,
-  Task9,
-  Task10,
-  Task11,
-  Task12,
-  Task13,
-  Task14,
-  Task15
+  Task1, Task2, Task3, Task4, Task5,
+  Task6, Task7, Task8, Task9, Task10,
+  Task11, Task12, Task13, Task14, Task15
 ];
 
 export default function Variant({ variant, onClose }) {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
-  const handleClose = () => {
-    if (onClose) {
-      onClose(variant.id);
-    }
+  const handleClose = (e) => {
+    e.stopPropagation(); // Предотвращаем всплытие события
+    onClose();
   };
 
   return (
     <div className="variant">
-      <div className="variant-header">
-        <div onClick={() => setIsOpen(!isOpen)} style={{flex: 1}}>
+      <div 
+        className="variant-header"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <div className="variant-title">
           <h3>Вариант #{variant.id}</h3>
         </div>
         <div className="variant-actions">
           <button 
-            onClick={() => setIsOpen(!isOpen)} 
             className="toggle-btn"
+            onClick={(e) => {
+              e.stopPropagation();
+              setIsOpen(!isOpen);
+            }}
           >
             {isOpen ? 'Свернуть' : 'Развернуть'}
           </button>
           <button 
-            onClick={handleClose} 
             className="close-btn"
+            onClick={handleClose}
           >
             Закрыть
           </button>
@@ -66,10 +59,9 @@ export default function Variant({ variant, onClose }) {
       </div>
       {isOpen && (
         <div className="variant-content">
-          {variant.tasks.map((taskNumber) => {
+          {variant.tasks.map(taskNumber => {
             const TaskComponent = taskComponents[taskNumber];
-            if (!TaskComponent) return null;
-            return <TaskComponent key={taskNumber} />;
+            return TaskComponent && <TaskComponent key={taskNumber} />;
           })}
         </div>
       )}
