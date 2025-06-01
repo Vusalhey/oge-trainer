@@ -1,5 +1,5 @@
 import React from 'react';
-import generateTask4 from '/home/vus/oge-trainer/src/generetors/task4.js';
+import generateTask4 from '../../generators/task4.js';
 import utils from '../../utils/utils';
 import { Table } from 'reactstrap';
 

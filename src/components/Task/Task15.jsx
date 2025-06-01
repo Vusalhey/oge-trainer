@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Card, CardBody, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import CodeMirror from '@uiw/react-codemirror';
-import generateTask15 from '/home/vus/oge-trainer/src/generetors/task15.js';
+import generateTask15 from '../../generators/task15.js';
 
 const defaultCode = {
   javascript: `function solution(input){\n  // формат входных данных: %%input%%\n  // формат выходных данных: %%output%%\n  let output\n  return output\n}`,

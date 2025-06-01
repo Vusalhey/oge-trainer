@@ -1,5 +1,5 @@
 import React from 'react';
-import generateTask10 from '/home/vus/oge-trainer/src/generetors/task10.js';
+import generateTask10 from '../../generators/task10.js';
 
 class Task10 extends React.Component {
   constructor(props) {

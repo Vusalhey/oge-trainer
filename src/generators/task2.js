@@ -1,7 +1,6 @@
 export default function generateTask2() {
-  // Фиксированные данные для примера
-  const encodedMessage = "101100011101"; // Пример закодированного сообщения
-  const answer = "КОЛБАСА"; // Фиксированный ответ для теста
+  const encodedMessage = "101100011101"; 
+  const answer = "КОЛБАСА";
   const letters = {
     'А': '01',
     'Б': '100',

@@ -1,5 +1,5 @@
 import React from 'react';
-import generateTask14 from '/home/vus/oge-trainer/src/generetors/task14.js';
+import generateTask14 from '../../generators/task14.js';
 import { Table } from 'reactstrap';
 
 class Task14 extends React.Component {

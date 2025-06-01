@@ -1,5 +1,4 @@
 export default function generateTask3() {
-  // Типы условий
   const conditionTypes = [
     { type: 'even', text: 'x чётное' },
     { type: 'odd', text: 'x нечётное' },
@@ -7,13 +6,11 @@ export default function generateTask3() {
     { type: 'notSameDigits', text: 'цифры x неодинаковые' }
   ];
 
-  // Генерация условий
   const min = 20;
   const max = 70;
   const condition1 = Math.floor(Math.random() * (max - min + 1)) + min;
   const condition2 = conditionTypes[Math.floor(Math.random() * conditionTypes.length)];
   
-  // Инвертировать условие (50% chance)
   const shouldInvert = Math.random() > 0.5;
   let conditionText = condition2.text;
   let conditionType = condition2.type;
@@ -24,7 +21,6 @@ export default function generateTask3() {
     else if (conditionType === 'sameDigits') conditionType = 'notSameDigits';
   }
 
-  // Генерация правильного ответа
   let answer;
   let x = condition1 + 1;
 
